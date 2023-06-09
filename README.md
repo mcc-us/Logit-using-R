@@ -1,6 +1,6 @@
 ## Logistic_with_R
 
-To view report: [An Investigation Of The Framingham Heart Study](https://github.com/mccurcio/Logistic_with_R/blob/main/2022-fhs-logit-report.pdf)
+To view report: [An Investigation Of The Framingham Heart Study](https://github.com/mcc-us/Logit-using-R/blob/main/2022-fhs-logit-report.pdf)
 
 ## Assumptions of Logistic Regression
 
