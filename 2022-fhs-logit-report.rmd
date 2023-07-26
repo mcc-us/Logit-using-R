@@ -1,17 +1,15 @@
 ---
-title: "An Investigation Of The Framingham Heart Study"
+title: "Investigating The Framingham Heart Study"
 author: "By Matthew Curcio"
 output: pdf_document
 ---
 
     
-## 1. Executive Summary
+## Executive Summary
 
 1. This report investigates data from the 1948 [Framingham Heart Study](https://www.framinghamheartstudy.org).
-
-- This longitudinal study includes 4,133 participants with 13 factors total over 10 years. 
-
-- Using this data, I will investigate the risk factors for cardiovascular disease.
+   - This longitudinal study includes 4,133 participants with 13 factors total over 10 years. 
+   - Using this data, I investigate the risk factors for cardiovascular disease (CVD).
 
 
 2. This report and my article [Introduction to Logit](https://github.com/mcc-us/intro-2-logit/blob/main/intro-2-logit.pdf) display my understanding of logistic regression and R. 
@@ -56,7 +54,7 @@ for (p in Libraries) {
 }
 
 #Load Data
-df <- read_csv("CHD_preprocessed.csv", 
+df <- read_csv("data/CHD_preprocessed.csv", 
      col_types = cols(male = col_factor(levels = c("0", "1")), 
                       education = col_factor(levels = c("0", "1")),
                       currentSmoker = col_skip(), 
