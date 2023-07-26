@@ -64,27 +64,131 @@ df <- read_csv("CHD_preprocessed.csv",
                       TenYearCHD = col_factor(levels = c("0", "1"))))
 ```
 
+
+
+
+
 ```{r}
 library(ggplot2)
 
 # Create a dataframe for males and females
-males <- df[data$gender == "male", ]
-females <- df[data$gender == "female", ]
+males <- df[df$male == 1, ]
+females <- df[df$male == 0, ]
+```
 
+```{r}
+# Find the minimum age
+min_age <- min(males$age)
+
+# Find the maximum age
+max_age <- max(males$age)
+
+# Print the minimum and maximum ages
+print(paste("The minimum age is", min_age))
+print(paste("The maximum age is", max_age))
+```
+
+```{r}
+# Find the minimum age
+min_age <- min(females$age)
+
+# Find the maximum age
+max_age <- max(females$age)
+
+# Print the minimum and maximum ages
+print(paste("The minimum age is", min_age))
+print(paste("The maximum age is", max_age))
+```
+
+
+
+```{r}
 # Create a histogram of ages for males
 ggplot(males, aes(x = age)) +
-  geom_histogram() +
+  geom_histogram(bins = 20, color="black", fill = "#D4F5FF") +
+  labs(title = "Age Distribution of Males",
+       x = "Age",
+       y = "Frequency")+
+  theme_light() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+# Create a histogram of ages for females
+ggplot(females, aes(x = age)) +
+  geom_histogram(bins = 20, color = "black", fill = "#FFD9EC") +
+  labs(title = "Age Distribution of Females",
+       x = "Age",
+       y = "Frequency")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Create a histogram of ages for males
+ggplot(males, aes(x = age)) +
+  geom_histogram(fill = "#FF99CC") +
   labs(title = "Age Distribution of Males",
        x = "Age",
        y = "Frequency")
 
 # Create a histogram of ages for females
 ggplot(females, aes(x = age)) +
-  geom_histogram() +
+  geom_histogram(fill = "#CC99FF") +
   labs(title = "Age Distribution of Females",
        x = "Age",
        y = "Frequency")
 ```
+
+```{r echo=FALSE, fig.width=3, message=FALSE, warning=FALSE}
+# Create a histogram of ages for males
+ggplot(males, aes(x = age)) +
+  geom_histogram(fill = "#FF99CC") +
+  labs(title = "Age Distribution of Males",
+       x = "Age",
+       y = "Frequency") +
+  theme(plot.title = element_text(hjust = 0.5, size = 9),
+        axis.title = element_text(size = 8),
+        axis.text = element_text(size = 7))
+
+# Create a histogram of ages for females
+ggplot(females, aes(x = age)) +
+  geom_histogram(fill = "#CC99FF") +
+  labs(title = "Age Distribution of Females",
+       x = "Age",
+       y = "Frequency") +
+  theme(plot.title = element_text(hjust = 0.5, size = 9),
+        axis.title = element_text(size = 8),
+        axis.text = element_text(size = 7))
+```
+
+
+```{r}
+# Create a density plot of ages for males
+ggplot(males, aes(x = age)) +
+  geom_density() +
+  labs(title = "Age Distribution of Males",
+       x = "Age")
+```
+
+```{r}
+# Create a density plot of ages for females
+ggplot(females, aes(x = age)) +
+  geom_density() +
+  labs(title = "Age Distribution of Females",
+       x = "Age")
+```
+
+```{r}
+# Create a histogram of ages for males
+ggplot(males, aes(x = age)) +
+  geom_histogram(bins = 20) +
+  geom_density(aes(color = "Density")) +
+  labs(title = "Age Distribution of Males",
+       x = "Age",
+       y = "Frequency")
+```
+
+Cigs per day for men and women
+
 
 ## 2. Results
 
