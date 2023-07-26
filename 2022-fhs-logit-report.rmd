@@ -7,10 +7,11 @@ output: pdf_document
     
 ## 1. Executive Summary
 
-1. This report investigates data from the 1948 <<[Framingham Heart Study](https://www.framinghamheartstudy.org)>>.
-    - Data can be found at <<[Kaggle](https://www.kaggle.com/datasets/captainozlem/framingham-chd-preprocessed-data)>>
-    - The longitudinal study includes 4,133 participants with 13 factors total over 10 years. 
-    - From this data, I will approximate risk factors for cardiovascular disease.
+1. This report investigates data from the 1948 [Framingham Heart Study](https://www.framinghamheartstudy.org).
+
+- The longitudinal study includes 4,133 participants with 13 factors total over 10 years. 
+
+- Using this data, I will investigate the risk factors for cardiovascular disease.
 
 
 2. This report and my article <<[Introduction to Logit](https://github.com/mcc-us/intro-2-logit/blob/main/intro-2-logit.pdf)>> display my understanding of logistic regression and R. 
@@ -32,6 +33,8 @@ output: pdf_document
 
 ## 2. Introduction
 
+- Data can be found at [Kaggle](https://www.kaggle.com/datasets/captainozlem/framingham-chd-preprocessed-data)
+    
 >The Framingham Heart Study began in 1948 by recruiting 5,209 men and women between the ages of 30 and 62 from the town of Framingham, Massachusetts. [These recruits] had not yet developed overt symptoms of cardiovascular disease or suffered a heart attack or stroke. 
 >
 >[The] study has since led to the identification of major CVD risk factors, as well as valuable information on the effects of these factors such as blood pressure, blood triglyceride and cholesterol levels, age, gender, and psychosocial issues.
