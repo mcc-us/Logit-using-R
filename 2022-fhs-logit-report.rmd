@@ -39,8 +39,9 @@ output: pdf_document
 >
 >https://www.framinghamheartstudy.org/fhs-about/
 
+\newpage
 
-## 2. Exploratory Data Analysis
+## 3. Exploratory Data Analysis
 
 ```{r LoadData, message=FALSE, warning=FALSE, include=FALSE}
 # DO NOT SHOW IN FINAL REPORT
@@ -75,41 +76,58 @@ library(ggplot2)
 # Create a dataframe for males and females
 males <- df[df$male == 1, ]
 females <- df[df$male == 0, ]
+
+summary(females)
+df2 <- data.frame(males, females)
 ```
 
 ```{r}
-# Find the minimum age
+# Find male min/max ages
 min_age <- min(males$age)
-
-# Find the maximum age
 max_age <- max(males$age)
-
-# Print the minimum and maximum ages
-print(paste("The minimum age is", min_age))
-print(paste("The maximum age is", max_age))
+# Find female min/max age
+min_age <- min(females$age)
+max_age <- max(females$age)
 ```
+
 
 ```{r}
-# Find the minimum age
-min_age <- min(females$age)
-
-# Find the maximum age
-max_age <- max(females$age)
+# Print the minimum and maximum ages
+#print("Male Ages")
+#print("---------")
+#print(paste("Minimum =", min_age))
+#print(paste("Maximum =", max_age))
 
 # Print the minimum and maximum ages
-print(paste("The minimum age is", min_age))
-print(paste("The maximum age is", max_age))
+print("Female Ages")
+print(paste("Minimum =", min_age))
+print(paste("Maximum =", max_age))
 ```
+
+aes(x=value, fill=var)) 
+```{r}
+# Create a histogram of ages for males
+ggplot(df, aes(x = male, fill=age)) +
+  geom_histogram(breaks=seq(30, 70, by = 5), 
+                 color="black", fill = "#DFF5FC") +
+  labs(title = "Age Distribution of Males",
+       x = "Age",
+       y = "Count")+
+  theme_light() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
 
 
 
 ```{r}
 # Create a histogram of ages for males
 ggplot(males, aes(x = age)) +
-  geom_histogram(bins = 20, color="black", fill = "#D4F5FF") +
+  geom_histogram(breaks=seq(30, 70, by = 5), 
+                 color="black", fill = "#DFF5FC") +
   labs(title = "Age Distribution of Males",
        x = "Age",
-       y = "Frequency")+
+       y = "Count")+
   theme_light() +
   theme(plot.title = element_text(hjust = 0.5))
 ```
@@ -117,10 +135,12 @@ ggplot(males, aes(x = age)) +
 ```{r}
 # Create a histogram of ages for females
 ggplot(females, aes(x = age)) +
-  geom_histogram(bins = 20, color = "black", fill = "#FFD9EC") +
+  geom_histogram(breaks=seq(30, 70, by = 5), 
+                 color = "black", fill = "#FAECF1") +
   labs(title = "Age Distribution of Females",
        x = "Age",
-       y = "Frequency")
+       y = "Count") +
+  theme_light() 
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
