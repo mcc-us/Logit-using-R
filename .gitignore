@@ -34,7 +34,7 @@ vignettes/*.pdf
 # knitr and R markdown default cache directories
 *_cache/
 /cache/
-*latex/
+*2022-fhs-logit-report_cache/
 
 # Temporary files created by R markdown
 *.utf8.md
