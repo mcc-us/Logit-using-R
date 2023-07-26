@@ -9,15 +9,15 @@ output: pdf_document
 
 1. This report investigates data from the 1948 [Framingham Heart Study](https://www.framinghamheartstudy.org).
 
-- The longitudinal study includes 4,133 participants with 13 factors total over 10 years. 
+- This longitudinal study includes 4,133 participants with 13 factors total over 10 years. 
 
 - Using this data, I will investigate the risk factors for cardiovascular disease.
 
 
-2. This report and my article <<[Introduction to Logit](https://github.com/mcc-us/intro-2-logit/blob/main/intro-2-logit.pdf)>> display my understanding of logistic regression and R. 
+2. This report and my article [Introduction to Logit](https://github.com/mcc-us/intro-2-logit/blob/main/intro-2-logit.pdf) display my understanding of logistic regression and R. 
 
 
-3. Seven (7) of the 13 factors are have high correlation leading to cardiovascular disease. The odds related to each factor were calculated from the study.
+3. Seven (7) of the 13 factors have a strong correlation that leads to cardiovascular disease. The odds related to each factor are calculated from the study.
 
 
 | No. | Factors | Odds(Over Mean) of CVD When Risk Is Prevalent |
