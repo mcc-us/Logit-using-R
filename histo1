@@ -1,0 +1,15 @@
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Create a histogram of ages for males
+ggplot(males, aes(x = age)) +
+  geom_histogram(fill = "#FF99CC") +
+  labs(title = "Age Distribution of Males",
+       x = "Age",
+       y = "Frequency")
+
+# Create a histogram of ages for females
+ggplot(females, aes(x = age)) +
+  geom_histogram(fill = "#CC99FF") +
+  labs(title = "Age Distribution of Females",
+       x = "Age",
+       y = "Frequency")
+```
