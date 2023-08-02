@@ -8,6 +8,8 @@
 
 # Session Data files
 .RData
+.rdx
+.rdb
 
 # User-specific files
 .Ruserdata
