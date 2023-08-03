@@ -67,6 +67,7 @@ df <- read_csv("data/CHD_preprocessed.csv",
 ### Descriptive Statistics
 
 #### Age Of Participants, Cigarettes Per Day, Body Mass Index
+
 ```{r}
 arr = rnorm(1000,50,20)
 par(mfrow = c(1, 3))

@@ -70,7 +70,22 @@ df <- read_csv("data/CHD_preprocessed.csv",
 ```
 
 
+### Descriptive Statistics
 
+#### Age Of Participants, Cigarettes Per Day, Body Mass Index
+
+```{r}
+arr = rnorm(1000,50,20)
+par(mfrow = c(1, 3))
+boxplot(arr, ylim=c(0,70), col = "red")
+#title('Age Of Participants', cex.main=2)
+
+boxplot(arr, ylim=c(0,70), col = "#EEEEEC")
+#title('Cigarettes Per Day', cex.main=2)
+
+boxplot(arr, ylim=c(0,70), col = "blue")
+#title('Body Mass Index', cex.main=2)
+```
 
 
 ```{r}
