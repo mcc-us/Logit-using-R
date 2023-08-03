@@ -13,12 +13,12 @@ This report investigates data from the 1948 Framingham Heart Study.^[https://www
 Using this data, I investigate the risk factors and odds for seven factors that increase the likelihood of cardiovascular disease (CVD).
 
 
-1. This report and my article Introduction to Logit^[https://github.com/mcc-us/intro-2-logit/blob/main/intro-2-logit.pdf] discuss ideas concerning to logistic regression and R. 
+1. This report and my article Introduction to Logit^[https://github.com/mcc-us/intro-2-logit/blob/main/intro-2-logit.pdf] discuss ideas concerning logistic regression and R. 
 
 
 2. Seven (7) factors have a strong correlation that leads to cardiovascular disease. The odds related to each factor are calculated from the data.
 
-### Seven Factors and Their Odds Of Developing Cardiovascular Disease
+### Seven Factors and YOUR Odds Of Developing Cardiovascular Disease
 
 | No. | Factors | Approximate Odds |
 | :-- | :------ | ----------------:|
@@ -32,19 +32,17 @@ Using this data, I investigate the risk factors and odds for seven factors that 
 
 
 ## 2. Introduction
+    
+Odds are calculated by using dividing two probabilities. In the case of a *Risk of Stroke,* divide the Probability *WITH* the prevalence of stroke in a patients' family history *VERSUS* the Probability *WITHOUT* having the prevalence of stroke in the family history.
+
+For Example:
+$$Odds~of~Stroke ~~=~~ \frac{Probability~[Stroke~in~family~history]}{Probability~[NO~stroke~in~family~history]} ~=~ \frac{0.18761}{0.07778} ~=~ \frac{2.41}{1}$$
+
+This longitudinal study includes 4,133 participants with 13 factors total over 10 years. 
 
 >The Framingham Heart Study began in 1948 by recruiting 5,209 men and women between the ages of 30 and 62 from the town of Framingham, Massachusetts. [These recruits] had not yet developed overt symptoms of cardiovascular disease or suffered a heart attack or stroke. 
 >
 >[The] study has since led to the identification of major CVD risk factors, as well as valuable information on the effects of these factors such as blood pressure, blood triglyceride and cholesterol levels, age, gender, and psychosocial issues.^[https://www.framinghamheartstudy.org/fhs-about]
-
-This longitudinal study includes 4,133 participants with 13 factors total over 10 years. 
-
-
-    
-Odds are calculated by using dividing two probabilities. In the case of a *Risk of Stroke.* We would divide the Probability *WITH* the prevalence of stroke in patients' family history *VERSUS* the Probability of *WITHOUT* having the prevalence of stroke in the family history.
-
-For Example:
-$$Odds~of~Stroke ~~=~~ \frac{Probability~[Stroke~in~family~history]}{Probability~[NO~stroke~in~family~history]} ~=~ \frac{0.18761}{0.07778} ~=~ \frac{2.41}{1}$$
 
 \newpage
 
