@@ -31,12 +31,12 @@ This report investigates data from the 1948 Framingham Heart Study.^[https://www
 
 ## 2. Introduction
 
-Data can be found at Kaggle.^[https://www.kaggle.com/datasets/captainozlem/framingham-chd-preprocessed-data]
-    
 >The Framingham Heart Study began in 1948 by recruiting 5,209 men and women between the ages of 30 and 62 from the town of Framingham, Massachusetts. [These recruits] had not yet developed overt symptoms of cardiovascular disease or suffered a heart attack or stroke. 
 >
 >[The] study has since led to the identification of major CVD risk factors, as well as valuable information on the effects of these factors such as blood pressure, blood triglyceride and cholesterol levels, age, gender, and psychosocial issues.^[https://www.framinghamheartstudy.org/fhs-about]
 
+Data can be found at Kaggle.^[https://www.kaggle.com/datasets/captainozlem/framingham-chd-preprocessed-data]
+    
 Odds are calculated by using dividing two probabilities. In the case of a *Risk of Stroke.* We would divide the Probability *WITH* the prevalence of stroke in patients' family history *VERSUS* the Probability of *WITHOUT* having the prevalence of stroke in the family history.
 
 For Example:
@@ -74,7 +74,7 @@ df <- read_csv("data/CHD_preprocessed.csv",
 
 #### Age Of Participants, Cigarettes Per Day, Body Mass Index
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 arr = rnorm(1000,50,20)
 par(mfrow = c(1, 3))
 boxplot(arr, ylim=c(0,70), col = "red")
@@ -86,28 +86,6 @@ boxplot(arr, ylim=c(0,70), col = "#EEEEEC")
 boxplot(arr, ylim=c(0,70), col = "blue")
 #title('Body Mass Index', cex.main=2)
 ```
-
-
-```{r}
-# Create a dataframe for males and females
-males <- df[df$male == 1,]
-females <- df[df$male == 0,]
-
-df2 = rbind(males, females)
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## 2. Logistic Regression Model Results
