@@ -1,17 +1,20 @@
 ---
-title: "Determining The Odds For Cardiovascular Disaease"
-subtitle: "Using Framingham Heart Study Data"
 author: "By Matthew Curcio"
+subtitle: Using Framingham Heart Study Data
+output: pdf_document
+
 pdf_document:
-    fig_caption: yes
-    fig_crop: no
-    fig_height: 2
-    fig_width: 3
-    keep_tex: no
-    number_sections: yes
-header-includes: 
+  fig_caption: yes
+  fig_crop: no
+  fig_height: 2
+  fig_width: 3
+  keep_tex: no
+  number_sections: yes
+
+header-includes:
 - \usepackage{graphicx}
 - \usepackage{float}
+title: "Determining The Odds For Cardiovascular Disaease"
 ---
 
 ## 1. Executive Summary
@@ -53,7 +56,6 @@ This longitudinal study includes 4,133 participants with 13 factors total over 1
 >
 >[The] study has since led to the identification of major CVD risk factors, as well as valuable information on the effects of these factors such as blood pressure, blood triglyceride and cholesterol levels, age, gender, and psychosocial issues.^[https://www.framinghamheartstudy.org/fhs-about]
 
-\newpage
 
 ## 3. Exploratory Data Analysis
 
