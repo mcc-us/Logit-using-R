@@ -2,11 +2,20 @@
 title: "Determining The Odds For Cardiovascular Disaease"
 subtitle: "Using Framingham Heart Study Data"
 author: "By Matthew Curcio"
-geometry: "left=1.2cm,right=1.2cm,top=1.2cm,bottom=2cm"
-output: pdf_document
+pdf_document:
+    fig_caption: yes
+    fig_crop: no
+    fig_height: 2
+    fig_width: 3
+    keep_tex: no
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+header-includes: 
+- \usepackage{graphicx}
+- \usepackage{float}
 ---
 
-    
 ## 1. Executive Summary
 
 This report investigates data from the 1948 Framingham Heart Study.^[https://www.framinghamheartstudy.org] Data can be found at Kaggle.^[https://www.kaggle.com/datasets/captainozlem/framingham-chd-preprocessed-data]
@@ -61,6 +70,15 @@ for (p in Libraries) {
     library(p, character.only = TRUE)
 }
 
+opts_chunk$set(fig.path='figure/graphics-', 
+                 cache.path='cache/graphics-', 
+                 fig.align='center',
+                 external=TRUE,
+                 echo=TRUE,
+                 warning=FALSE,
+                 fig.pos='H'
+                )
+
 #Load Data
 df <- read_csv("data/CHD_preprocessed.csv", 
      col_types = cols(male = col_factor(levels = c("0", "1")), 
@@ -74,9 +92,9 @@ df <- read_csv("data/CHD_preprocessed.csv",
 ```
 
 
-### Descriptive Statistics
+### 3.1 Descriptive Statistics
 
-#### Age Of Participants, Cigarettes Per Day, Body Mass Index
+#### 3.1.1 Age Of Participants, Cigarettes Per Day, Body Mass Index
 
 ```{r}
 par(mfrow = c(1, 3))
@@ -90,7 +108,7 @@ boxplot(df$BMI, ylim=c(0,70), col = "blue")
 title('Body Mass Index')
 ```
 
-
+#### 3.1.2 Age Of Participants, Cigarettes Per Day, Body Mass Index
 
 ## 2. Logistic Regression Model Results
 
