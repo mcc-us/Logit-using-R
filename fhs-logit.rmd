@@ -70,14 +70,12 @@ for (p in Libraries) {
     library(p, character.only = TRUE)
 }
 
-opts_chunk$set(fig.path='figure/graphics-', 
-                 cache.path='cache/graphics-', 
-                 fig.align='center',
-                 external=TRUE,
-                 echo=TRUE,
-                 warning=FALSE,
-                 fig.pos='H'
-                )
+opts_chunk$set(fig.align='center',
+               external=TRUE,
+               echo=TRUE,
+               warning=FALSE,
+               fig.pos='H'
+               )
 
 #Load Data
 df <- read_csv("data/CHD_preprocessed.csv", 
