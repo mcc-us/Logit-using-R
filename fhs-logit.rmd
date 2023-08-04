@@ -9,8 +9,6 @@ pdf_document:
     fig_width: 3
     keep_tex: no
     number_sections: yes
-    toc: yes
-    toc_depth: 2
 header-includes: 
 - \usepackage{graphicx}
 - \usepackage{float}
@@ -106,7 +104,59 @@ boxplot(df$BMI, ylim=c(0,70), col = "blue")
 title('Body Mass Index')
 ```
 
-#### 3.1.2 Age Of Participants, Cigarettes Per Day, Body Mass Index
+#### 3.1.2 Systolic Blood Pressure, Diastolic BP, Heart Rate
+
+```{r}
+par(mfrow = c(1, 3))
+boxplot(df$sysBP, ylim=c(0,300), col = "red")
+title('Systolic BP, mmHg')
+
+boxplot(df$diaBP, ylim=c(0,300), col = "#EEEEEC")
+title('Diastolic BP, mmHg')
+
+boxplot(df$heartRate, ylim=c(0,300), col = "blue")
+title('Heart Rate, bpm')
+```
+
+#### 3.1.3 Glucose, Cholesterol
+
+```{r}
+par(mfrow = c(1, 3))
+boxplot(df$glucose, ylim=c(0,600), col = "red")
+title('Glucose BP, mg/dl')
+
+boxplot(df$totChol, ylim=c(0,600), col = "#EEEEEC")
+title('Cholesterol, mg/dl')
+```
+
+#### 3.1.3 Male and Female Participants by Age
+
+```{r eval=FALSE, include=FALSE}
+# Create a dataframe for males and females
+males <- df[df$male == 1,]
+females <- df[df$male == 0,]
+hist(males$age)
+hist(females$age)
+```
+
+```{r}
+# install.packages("ggplot2")
+library(ggplot2)
+
+# Histogram by group in ggplot2
+ggplot(df, aes(x = age, fill = male)) + 
+  geom_histogram(alpha = 0.4, binwidth=5, position = "identity") + 
+  scale_color_discrete(labels = c("Female", "Male")) +
+  scale_fill_discrete(labels = c("Female", "Male")) +
+  ggtitle("Male and Female Participants by Age") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  labs(fill = "Sex")
+```
+
+
+
+
 
 ## 2. Logistic Regression Model Results
 
